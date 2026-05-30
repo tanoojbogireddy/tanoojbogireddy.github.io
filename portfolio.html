@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tanooj Reddy Bogireddy — AI Systems Engineer</title>
+<meta name="description" content="AI Systems Engineer specializing in GTM Intelligence, AEO/SAIO, Growth Analytics Engineering, and autonomous LLM pipelines."/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#0077B5;
+  --blue-dark:#005a8e;
+  --blue-light:#e8f4fd;
+  --blue-mid:#cce5f5;
+  --white:#ffffff;
+  --bg:#f7fafd;
+  --text:#0f1923;
+  --text2:#3a4a58;
+  --text3:#6b7e8f;
+  --border:#dde8f0;
+  --serif:'Playfair Display',serif;
+  --sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font-family:var(--sans);line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 64px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-size:15px;font-weight:700;color:var(--blue);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:8px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:6px 14px;border-radius:6px;transition:all 0.15s}
+.nav-links a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-cta{background:var(--blue);color:var(--white);font-size:13px;font-weight:600;padding:8px 20px;border-radius:8px;text-decoration:none;transition:background 0.15s}
+.nav-cta:hover{background:var(--blue-dark)}
+
+/* HERO */
+.hero{padding:96px 64px 80px;background:var(--white);border-bottom:1px solid var(--border)}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:center}
+.hero-available{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);border:1px solid var(--blue-mid);color:var(--blue);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;margin-bottom:28px;letter-spacing:0.3px}
+.hero-available::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-family:var(--serif);font-size:62px;line-height:1.05;letter-spacing:-1px;color:var(--text);margin-bottom:16px}
+.hero h1 span{color:var(--blue)}
+.hero-role{font-size:15px;color:var(--text3);font-weight:500;margin-bottom:20px;line-height:1.5}
+.hero-role b{color:var(--blue);font-weight:600}
+.hero-desc{font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:36px;max-width:560px}
+.hero-desc strong{color:var(--text);font-weight:600}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-blue{background:var(--blue);color:var(--white);font-size:14px;font-weight:600;padding:12px 28px;border-radius:8px;text-decoration:none;transition:background 0.15s;display:inline-flex;align-items:center;gap:6px}
+.btn-blue:hover{background:var(--blue-dark)}
+.btn-white{background:var(--white);color:var(--text);font-size:14px;font-weight:500;padding:11px 24px;border-radius:8px;text-decoration:none;border:1.5px solid var(--border);transition:all 0.15s;display:inline-flex;align-items:center;gap:6px}
+.btn-white:hover{border-color:var(--blue);color:var(--blue)}
+
+/* HERO CARD */
+.hero-card{background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px}
+.hero-card-top{display:flex;align-items:center;gap:14px}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:18px;font-weight:700;font-family:var(--serif);flex-shrink:0}
+.avatar-info h3{font-size:15px;font-weight:700;color:var(--text)}
+.avatar-info p{font-size:12px;color:var(--text3)}
+.hero-card-divider{height:1px;background:var(--border)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hstat{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.hstat-num{font-size:28px;font-weight:700;color:var(--blue);line-height:1;font-family:var(--serif)}
+.hstat-label{font-size:11px;color:var(--text3);margin-top:3px;line-height:1.4}
+.hero-tags{display:flex;flex-wrap:wrap;gap:6px}
+.htag{font-size:11px;font-weight:500;background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:20px;border:1px solid var(--blue-mid)}
+
+/* SECTION WRAPPER */
+.section{padding:80px 64px;border-bottom:1px solid var(--border)}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-header{display:flex;align-items:baseline;gap:12px;margin-bottom:48px}
+.section-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:2px;text-transform:uppercase;background:var(--blue-light);padding:4px 10px;border-radius:4px}
+.section-title{font-family:var(--serif);font-size:34px;color:var(--text);letter-spacing:-0.5px}
+.section-bg{background:var(--bg)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text p{font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:16px}
+.about-text p:last-child{margin-bottom:0}
+.about-text strong{color:var(--text);font-weight:600}
+.quote{border-left:3px solid var(--blue);padding:14px 20px;background:var(--blue-light);border-radius:0 8px 8px 0;font-size:15px;font-style:italic;color:var(--text2);margin-top:24px;line-height:1.7}
+.edu-cards{display:flex;flex-direction:column;gap:14px}
+.edu-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:20px 22px;transition:border-color 0.15s}
+.edu-card:hover{border-color:var(--blue)}
+.edu-card-icon{width:36px;height:36px;background:var(--blue-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+.edu-card h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+.edu-card p{font-size:12px;color:var(--text3);line-height:1.6}
+.edu-card .tag{display:inline-block;font-size:10px;font-weight:600;background:var(--blue-light);color:var(--blue);padding:2px 8px;border-radius:4px;margin-top:6px}
+
+/* IMPACT */
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.impact-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:24px;text-align:center;transition:all 0.15s;position:relative;overflow:hidden}
+.impact-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform 0.25s}
+.impact-card:hover::after{transform:scaleX(1)}
+.impact-card:hover{border-color:var(--blue-mid)}
+.impact-num{font-family:var(--serif);font-size:48px;font-weight:700;color:var(--blue);line-height:1;margin-bottom:6px}
+.impact-num sup{font-size:22px;vertical-align:super}
+.impact-label{font-size:13px;color:var(--text2);font-weight:500;line-height:1.4;margin-bottom:4px}
+.impact-source{font-size:11px;color:var(--text3)}
+
+/* SKILLS */
+.skills-wrap{display:flex;flex-direction:column;gap:28px}
+.skill-row{}
+.skill-row-title{font-size:12px;font-weight:700;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
+.skill-pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:12px;font-weight:500;background:var(--white);color:var(--text2);border:1.5px solid var(--border);padding:6px 14px;border-radius:20px;transition:all 0.12s;cursor:default}
+.pill:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.pill.key{background:var(--blue);color:var(--white);border-color:var(--blue)}
+.pill.key:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj-card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;transition:all 0.2s}
+.proj-card:hover{border-color:var(--blue);transform:translateY(-3px)}
+.proj-card.featured{border-color:var(--blue-mid);background:var(--bg)}
+.proj-type{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue)}
+.proj-title{font-size:16px;font-weight:700;color:var(--text);line-height:1.3}
+.proj-desc{font-size:13px;color:var(--text3);line-height:1.7;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
+.proj-tag{font-size:10px;font-weight:600;background:var(--blue-light);color:var(--blue);padding:3px 8px;border-radius:4px}
+.proj-tag.gray{background:var(--bg);color:var(--text3);border:1px solid var(--border)}
+.proj-links{display:flex;gap:10px;margin-top:4px}
+.proj-link{font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.proj-link:hover{text-decoration:underline}
+.proj-coming{font-size:10px;font-weight:700;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-mid);padding:2px 10px;border-radius:20px;display:inline-block}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none;padding-bottom:0}
+.exp-left{}
+.exp-date{font-size:12px;font-weight:600;color:var(--blue);margin-bottom:4px}
+.exp-company{font-size:13px;font-weight:700;color:var(--text)}
+.exp-loc{font-size:12px;color:var(--text3);margin-top:2px}
+.exp-badge{display:inline-block;font-size:10px;font-weight:700;background:var(--blue);color:var(--white);padding:3px 8px;border-radius:4px;margin-top:8px;letter-spacing:0.5px}
+.exp-right{}
+.exp-role{font-size:18px;font-weight:700;color:var(--text);margin-bottom:14px}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:9px}
+.exp-bullets li{font-size:13px;color:var(--text2);line-height:1.7;padding-left:18px;position:relative}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--blue);font-size:11px;top:3px}
+
+/* CONNECT */
+.connect-wrap{background:var(--blue);border-radius:16px;padding:56px 64px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.connect-left h2{font-family:var(--serif);font-size:36px;color:var(--white);margin-bottom:10px;line-height:1.2}
+.connect-left p{font-size:14px;color:rgba(255,255,255,0.75);max-width:460px;line-height:1.8}
+.connect-right{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.connect-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.12);color:var(--white);font-size:13px;font-weight:600;padding:12px 22px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);transition:all 0.15s;min-width:220px}
+.connect-btn:hover{background:rgba(255,255,255,0.22)}
+.connect-btn.primary{background:var(--white);color:var(--blue)}
+.connect-btn.primary:hover{background:#f0f8ff}
+.connect-icon{font-size:16px}
+
+/* FOOTER */
+footer{padding:28px 64px;display:flex;justify-content:space-between;align-items:center;max-width:100%;border-top:1px solid var(--border)}
+.footer-left{font-size:13px;color:var(--text3)}
+.footer-left span{color:var(--blue);font-weight:600}
+.footer-right{font-size:12px;color:var(--text3)}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+.fi.show{opacity:1;transform:none}
+
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero{padding:60px 20px 48px}
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero-card{display:none}
+  .hero h1{font-size:44px}
+  .section{padding:56px 20px}
+  .about-grid,.impact-grid,.projects-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .exp-item{grid-template-columns:1fr;gap:12px}
+  .connect-wrap{flex-direction:column;padding:36px 24px}
+  footer{flex-direction:column;gap:8px;padding:20px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Tanooj Bogireddy</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <a href="mailto:btr9347@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner fi">
+    <div>
+      <div class="hero-available">Available for opportunities</div>
+      <h1>Tanooj Reddy<br/><span>Bogireddy</span></h1>
+      <p class="hero-role">
+        <b>AI Systems Engineer</b> &nbsp;·&nbsp; GTM Intelligence &nbsp;·&nbsp; AEO/SAIO &nbsp;·&nbsp; Growth Analytics Engineering
+      </p>
+      <p class="hero-desc">
+        I build systems that <strong>transform unstructured signals into autonomous decisions</strong> — from LLM citation pipelines and GTM intelligence agents to full-stack GA4 and Search Console analytics. Sole AI builder at a Techstars-backed startup. MS IT Management, UT Dallas.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-blue">View My Work →</a>
+        <a href="#connect" class="btn-white">Get In Touch</a>
+        <a href="https://www.linkedin.com/in/tanooj-bogireddy/" target="_blank" class="btn-white">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <div class="avatar">TB</div>
+        <div class="avatar-info">
+          <h3>Tanooj Bogireddy</h3>
+          <p>AI Systems Engineer · Plano, TX</p>
+        </div>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num">80%</div>
+          <div class="hstat-label">Prospecting reduction</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">56</div>
+          <div class="hstat-label">Companies tracked</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">60%</div>
+          <div class="hstat-label">Analysis time saved</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">40%</div>
+          <div class="hstat-label">Data enrichment uplift</div>
+        </div>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-tags">
+        <span class="htag">AEO / SAIO</span>
+        <span class="htag">GTM Intelligence</span>
+        <span class="htag">GA4</span>
+        <span class="htag">LLM Pipelines</span>
+        <span class="htag">FastAPI</span>
+        <span class="htag">Decision Intelligence</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section fi">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">About</span>
+      <h2 class="section-title">About Me & Education</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I engineer at the intersection of <strong>autonomous multi-agent orchestration</strong>, <strong>AI search visibility intelligence</strong>, and <strong>full-funnel growth analytics</strong>. My focus is turning unstructured real-time signals into high-reliability, production-grade decision loops.</p>
+        <p>As the <strong>sole technical AI builder at CREWASIS.ai</strong> (Techstars-backed), I built Signal Scout — an LLM-based GTM intelligence agent using LLaMA-3.3-70B — and a 56-company AEO/SAIO competitor benchmarking system from scratch.</p>
+        <p>I also own the complete growth analytics stack: <strong>GA4 event schema design</strong>, <strong>Google Tag Manager</strong> container architecture, <strong>Google Search Console</strong> integration for impression-to-conversion tracking, and real-time Looker Studio dashboards for GTM decision-making.</p>
+        <div class="quote">"Build systems that decide, not just systems that compute."</div>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-card">
+          <div class="edu-card-icon">🎓</div>
+          <h4>MS Information Technology Management</h4>
+          <p>University of Texas at Dallas · Plano, TX</p>
+          <span class="tag">OPT Status · Available Now</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-icon">⚡</div>
+          <h4>Sole AI Builder — CREWASIS.ai</h4>
+          <p>Techstars-backed startup · Signal Scout · 56-company SAIO tracker · GA4/GTM stack</p>
+          <span class="tag">2024 — Present</span>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-icon">🎯</div>
+          <h4>Decision Intelligence Engineering</h4>
+          <p>Core specialisation: GTM Intelligence · AEO/SAIO · Growth Analytics · Autonomous LLM Pipelines</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-card-icon">🚀</div>
+          <h4>Long-term Vision</h4>
+          <p>Building TAG — a Decision Intelligence startup targeting Indian SMEs · Cambridge MPhil MLMI target</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IMPACT -->
+<div id="impact" class="section section-bg fi">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Results</span>
+      <h2 class="section-title">Quantified Production Impact</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-num">80<sup>%</sup></div>
+        <div class="impact-label">Reduction in manual prospecting</div>
+        <div class="impact-source">LLaMA-3.3-70B ICP engine</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-num">60<sup>%</sup></div>
+        <div class="impact-label">Reduction in manual analysis</div>
+        <div class="impact-source">AEO/SAIO intelligence infra</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-num">56</div>
+        <div class="impact-label">Companies tracked for AI visibility</div>
+        <div class="impact-source">SAIO benchmarking system</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-num">40<sup>%</sup></div>
+        <div class="impact-label">Increase in profile data enrichment</div>
+        <div class="impact-source">FastAPI + Airflow pipelines</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills" class="section fi">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Stack</span>
+      <h2 class="section-title">Technical Skills</h2>
+    </div>
+    <div class="skills-wrap">
+      <div class="skill-row">
+        <div class="skill-row-title">Agentic Orchestration</div>
+        <div class="skill-pills">
+          <span class="pill key">Multi-Agent State Loops</span>
+          <span class="pill key">Supervisor Routing</span>
+          <span class="pill">LangChain</span>
+          <span class="pill">LlamaIndex</span>
+          <span class="pill">LLaMA-3.3-70B</span>
+          <span class="pill">Groq API</span>
+          <span class="pill">Custom Python Frameworks</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-title">AI & Backend Core</div>
+        <div class="skill-pills">
+          <span class="pill key">Python</span>
+          <span class="pill key">FastAPI</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">Vector Databases</span>
+          <span class="pill">LLM Pipelines</span>
+          <span class="pill">ICP Matching</span>
+          <span class="pill">CRM Routing</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-title">Growth Analytics & Search Intelligence</div>
+        <div class="skill-pills">
+          <span class="pill key">GA4</span>
+          <span class="pill key">Google Tag Manager</span>
+          <span class="pill key">Google Search Console</span>
+          <span class="pill key">AEO / SAIO</span>
+          <span class="pill">Looker Studio</span>
+          <span class="pill">BigQuery</span>
+          <span class="pill">LLM Citation Tracking</span>
+          <span class="pill">Intent Signal Analysis</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-title">Data & Infrastructure</div>
+        <div class="skill-pills">
+          <span class="pill">Apache Airflow</span>
+          <span class="pill">SQL</span>
+          <span class="pill">ETL Pipelines</span>
+          <span class="pill">BigQuery</span>
+          <span class="pill">Supabase</span>
+          <span class="pill">Neon DB</span>
+          <span class="pill">RSS Orchestration</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-title">MLOps & Cloud</div>
+        <div class="skill-pills">
+          <span class="pill">AWS</span>
+          <span class="pill">Lambda Serverless</span>
+          <span class="pill">Docker</span>
+          <span class="pill">CI/CD</span>
+          <span class="pill">Razorpay</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-row-title">Decision Intelligence</div>
+        <div class="skill-pills">
+          <span class="pill key">GTM Intelligence</span>
+          <span class="pill key">Competitor Benchmarking</span>
+          <span class="pill">Erlang C Queuing</span>
+          <span class="pill">Unit Economics Modeling</span>
+          <span class="pill">Demand Forecasting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="section section-bg fi">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Projects</span>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="proj-card featured">
+        <div class="proj-type">GTM Intelligence</div>
+        <div class="proj-title">Signal Scout — GTM Intelligence Agent</div>
+        <div class="proj-desc">LLaMA-3.3-70B powered demand intelligence engine integrating with HubSpot/Salesforce to automatically qualify and route high-priority opportunities. 80% reduction in manual prospecting.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">LLaMA-3.3-70B</span>
+          <span class="proj-tag">FastAPI</span>
+          <span class="proj-tag">Airflow</span>
+          <span class="proj-tag">Groq</span>
+        </div>
+        <div class="proj-links"><a class="proj-link" href="https://github.com/tanoojbogireddy" target="_blank">View Code ↗</a></div>
+      </div>
+      <div class="proj-card featured">
+        <div class="proj-type">AEO / SAIO</div>
+        <div class="proj-title">AEO/SAIO Visibility Intelligence System</div>
+        <div class="proj-desc">56-company AI search visibility benchmarking across Perplexity, ChatGPT, Gemini, and Copilot. Automated citation scoring and weekly intelligence digests. 60% reduction in analysis time.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">AEO / SAIO</span>
+          <span class="proj-tag">LLM APIs</span>
+          <span class="proj-tag">Search Console</span>
+        </div>
+        <div class="proj-links"><a class="proj-link" href="https://github.com/tanoojbogireddy" target="_blank">View Code ↗</a></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-type">Growth Analytics</div>
+        <div class="proj-title">Growth Analytics & Intent Infrastructure</div>
+        <div class="proj-desc">Full GA4 event schema design, GTM container architecture, and Search Console integration for impression-to-conversion tracking. Real-time Looker Studio dashboards.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">GA4</span>
+          <span class="proj-tag">GTM</span>
+          <span class="proj-tag">BigQuery</span>
+          <span class="proj-tag">Looker Studio</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-type">Decision Intelligence</div>
+        <div class="proj-title">AI Infrastructure & Agent Cost Predictor</div>
+        <div class="proj-desc">Predictive decision engine using Erlang C queuing models to forecast multi-agent infrastructure unit economics and scale compute during 35% load spikes.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">FastAPI</span>
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Erlang C</span>
+          <span class="proj-tag">TypeScript</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-type">Automation</div>
+        <div class="proj-title">Autonomous B2B Lead Generation Pipeline</div>
+        <div class="proj-desc">Python scraping agent scanning multi-channel RSS feeds with Llama 3 via Groq for role priority filtering and automated morning email delivery.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Llama 3</span>
+          <span class="proj-tag">Groq</span>
+          <span class="proj-tag">SMTPLIB</span>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div><span class="proj-coming">Coming Soon</span></div>
+        <div class="proj-type" style="margin-top:8px">WhatsApp · India</div>
+        <div class="proj-title">Ref Radar — Referral Intelligence Platform</div>
+        <div class="proj-desc">WhatsApp-native job referral platform for the Indian market. Subscribers receive matched referral alerts. ₹399/month · FastAPI + Supabase + Razorpay.</div>
+        <div class="proj-tags">
+          <span class="proj-tag gray">WhatsApp API</span>
+          <span class="proj-tag gray">FastAPI</span>
+          <span class="proj-tag gray">Supabase</span>
+          <span class="proj-tag gray">Razorpay</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" class="section fi">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Experience</span>
+      <h2 class="section-title">Work History</h2>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="exp-date">2024 — Present</div>
+          <div class="exp-company">CREWASIS.ai</div>
+          <div class="exp-loc">Plano, TX</div>
+          <span class="exp-badge">Techstars-backed</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role">Sole Technical AI Builder</div>
+          <ul class="exp-bullets">
+            <li>Engineered Signal Scout — an LLM-based GTM intelligence agent using LLaMA-3.3-70B, Groq, and FastAPI — reducing manual prospecting by 80%.</li>
+            <li>Built a 56-company AEO/SAIO competitor intelligence system tracking AI search visibility across Perplexity, ChatGPT, Gemini, and Copilot.</li>
+            <li>Architected full GA4, GTM, and Google Search Console analytics stack with automated intent signal pipelines into real-time Looker Studio dashboards.</li>
+            <li>Designed AI Infrastructure Cost Predictor using Erlang C queuing models, achieving 20% responsiveness optimization and absorbing 35% traffic spikes.</li>
+            <li>Scaled profile data enrichment by 40% via FastAPI and Apache Airflow pipelines processing unstructured behavioral intent data.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONNECT -->
+<div id="connect" class="section fi">
+  <div class="section-inner">
+    <div class="connect-wrap">
+      <div class="connect-left">
+        <h2>Let's build the future of AI together.</h2>
+        <p>Open to AI Engineering, Growth Analytics Engineering, GTM Intelligence, and Decision Intelligence roles. Based in Plano, TX — available immediately on OPT.</p>
+      </div>
+      <div class="connect-right">
+        <a href="mailto:btr9347@gmail.com" class="connect-btn primary">
+          <span class="connect-icon">✉️</span> btr9347@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/tanooj-bogireddy/" target="_blank" class="connect-btn">
+          <span class="connect-icon">💼</span> LinkedIn Profile
+        </a>
+        <a href="https://github.com/tanoojbogireddy" target="_blank" class="connect-btn">
+          <span class="connect-icon">⌥</span> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2025 <span>Tanooj Reddy Bogireddy</span> · Engineered with precision</div>
+  <div class="footer-right">Plano, TX · AI Systems Engineer</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('show'), i*60); obs.unobserve(e.target); }
+  });
+},{threshold:0.07});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
