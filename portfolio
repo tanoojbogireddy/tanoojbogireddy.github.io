@@ -469,17 +469,6 @@ footer{padding:28px 64px;display:flex;justify-content:space-between;align-items:
           <span class="proj-tag">SMTPLIB</span>
         </div>
       </div>
-      <div class="proj-card">
-        <div><span class="proj-coming">Coming Soon</span></div>
-        <div class="proj-type" style="margin-top:8px">WhatsApp · India</div>
-        <div class="proj-title">Ref Radar — Referral Intelligence Platform</div>
-        <div class="proj-desc">WhatsApp-native job referral platform for the Indian market. Subscribers receive matched referral alerts. ₹399/month · FastAPI + Supabase + Razorpay.</div>
-        <div class="proj-tags">
-          <span class="proj-tag gray">WhatsApp API</span>
-          <span class="proj-tag gray">FastAPI</span>
-          <span class="proj-tag gray">Supabase</span>
-          <span class="proj-tag gray">Razorpay</span>
-        </div>
       </div>
     </div>
   </div>
