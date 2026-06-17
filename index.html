@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanooj Bogireddy -AI Systems Engineer</title>
-  <meta name="description" content="AI Systems Engineer specializing in multi-agent orchestration, LLMOps cost observability, and production NLP frameworks.">
+  <title>Tanooj Reddy Bogireddy — AI Systems & Decision Intelligence</title>
+  <meta name="description" content="AI Systems Engineer specializing in multi-agent orchestration, LLMOps cost observability, and growth analytics engineering.">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* --- Notion UI Design System Tokens --- */
+    /* --- Modern Notion Theme Engine Tokens --- */
     :root {
       --bg-color: #ffffff;
       --text-main: #37352f;
-      --text-gray: #787774;
-      --border-color: #e9e9e8;
+      --text-secondary: #5a5a57;
+      --text-muted: #787774;
+      --border-color: #eeeeec;
+      --border-dark: #e1e1e0;
       --bg-callout: #f1f1ef;
       --bg-hover: #f7f7f5;
       
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      /* Notion Tag Color Codes */
+      --tag-blue-bg: #e3f2fd;    --tag-blue-txt: #0d47a1;
+      --tag-purple-bg: #f3e5f5;  --tag-purple-txt: #4a148c;
+      --tag-orange-bg: #fff3e0;  --tag-orange-txt: #e65100;
+      --tag-green-bg: #e8f5e9;   --tag-green-txt: #1b5e20;
+      --tag-gray-bg: #f1f1ef;    --tag-gray-txt: #37352f;
+      --tag-red-bg: #ffebee;     --tag-red-txt: #c62828;
     }
 
-    /* --- Global Configurations --- */
+    /* --- Reset & Layout Resiliency --- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -27,134 +39,227 @@
     }
 
     body {
-      font-family: var(--font-sans);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       color: var(--text-main);
       background-color: var(--bg-color);
-      line-height: 1.5;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.01em;
     }
 
-    .notion-page {
-      max-width: 720px;
+    .notion-container {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 80px 40px 100px 40px;
+      padding: 60px 40px 120px 40px;
     }
 
-    /* --- Typography Structure --- */
+    /* --- Header & Cover Setup --- */
     .notion-header {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
     }
 
-    .notion-page-icon {
+    .notion-icon {
       font-size: 4.5rem;
-      line-height: 1.1;
-      margin-bottom: 12px;
+      line-height: 1;
+      margin-bottom: 16px;
+      display: inline-block;
+      user-select: none;
     }
 
     h1.notion-title {
       font-size: 2.5rem;
       font-weight: 700;
-      margin: 0 0 8px 0;
-      letter-spacing: -0.015em;
+      color: var(--text-main);
+      letter-spacing: -0.025em;
+      margin-bottom: 6px;
     }
 
     .notion-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-gray);
-      margin: 0;
-    }
-
-    h2.notion-section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-top: 2.5rem;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-secondary);
       margin-bottom: 12px;
-      padding-bottom: 4px;
-      letter-spacing: -0.01em;
     }
 
-    /* --- Notion Callout Block --- */
+    .notion-meta-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 8px;
+      background-color: var(--tag-green-bg);
+      color: var(--tag-green-txt);
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--tag-green-txt);
+      border-radius: 50%;
+    }
+
+    /* --- Universal Divider --- */
+    hr.notion-divider {
+      border: none;
+      border-bottom: 1px solid var(--border-color);
+      margin: 2rem 0;
+    }
+
+    /* --- Beautiful Callout Design --- */
     .notion-callout {
       display: flex;
-      padding: 16px;
+      padding: 16px 20px;
       background-color: var(--bg-callout);
       border-radius: 4px;
-      margin: 24px 0;
-      gap: 14px;
+      margin: 2rem 0;
+      gap: 16px;
       align-items: flex-start;
+      border: 1px solid transparent;
     }
 
     .notion-callout-icon {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       line-height: 1.2;
     }
 
-    .notion-callout-text {
+    .notion-callout-content {
       font-size: 0.95rem;
-    }
-
-    /* --- Multi-Column Layout Grid --- */
-    .notion-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-      margin: 20px 0;
-    }
-
-    .column-header {
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    .notion-col ul {
-      padding-left: 16px;
-      margin: 0;
-    }
-
-    .notion-col li {
-      font-size: 0.9rem;
-      margin-bottom: 6px;
       color: var(--text-main);
     }
 
-    /* --- Database Structural Header --- */
-    .database-header {
+    /* --- Key Performance Indicators (Metrics) --- */
+    .metrics-dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 2rem 0;
+    }
+
+    .metric-block {
+      background: var(--bg-hover);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 14px;
+      text-align: left;
+    }
+
+    .metric-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .metric-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* --- Section & Inline Databases --- */
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+
+    /* --- Grid & Core Competency Lists --- */
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin: 1.5rem 0;
+    }
+
+    .competency-column h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .competency-column ul {
+      list-style: none;
+    }
+
+    .competency-column li {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
-      margin-top: 3.5rem;
-      margin-bottom: 16px;
+      gap: 8px;
+    }
+
+    .competency-column li::before {
+      content: "•";
+      color: var(--text-muted);
+      font-weight: bold;
+    }
+
+    /* --- Inline Database UI Headers --- */
+    .db-wrapper {
+      margin: 2.5rem 0;
+    }
+
+    .db-header {
+      display: flex;
+      align-items: center;
       border-bottom: 1px solid var(--border-color);
-      padding-bottom: 6px;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
     }
 
-    .database-arrow {
-      color: var(--text-gray);
-      font-size: 0.65rem;
+    .db-arrow {
+      color: var(--text-muted);
+      font-size: 0.7rem;
       margin-right: 8px;
-      user-select: none;
     }
 
-    h2.notion-section-title.inline-db {
-      margin: 0;
-      font-size: 1.15rem;
+    .db-title {
+      font-size: 1.1rem;
       font-weight: 600;
+      color: var(--text-main);
     }
 
-    .database-view-tag {
+    .db-view-badge {
       margin-left: 12px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 500;
-      color: var(--text-main);
-      padding: 2px 6px;
+      color: var(--text-secondary);
+      padding: 2px 8px;
       background: var(--bg-callout);
       border-radius: 3px;
     }
 
-    /* --- Inline Database Gallery System --- */
+    /* --- High Fidelity Project Gallery Card Layout --- */
     .notion-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 16px;
     }
 
@@ -167,32 +272,28 @@
       flex-direction: column;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
     .notion-card:hover {
-      background-color: #fafafa;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-
-    .notion-card.static-card:hover {
-      cursor: default;
-      box-shadow: none;
-      background: var(--bg-color);
+      border-color: var(--border-dark);
+      box-shadow: 0px 4px 12px rgba(55, 53, 47, 0.04);
+      background-color: var(--bg-hover);
     }
 
     .notion-card-cover {
-      height: 95px;
+      height: 100px;
       background: #f7f7f5;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2.2rem;
+      user-select: none;
     }
 
     .notion-card-content {
-      padding: 14px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -200,51 +301,54 @@
 
     .notion-card-title {
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      color: var(--text-main);
       margin-bottom: 6px;
     }
 
     .notion-card-desc {
-      font-size: 0.85rem;
-      color: var(--text-gray);
-      margin: 0 0 14px 0;
-      line-height: 1.45;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
       flex-grow: 1;
     }
 
-    /* --- Notion Multiselect Property Tag Styling --- */
+    /* --- Precise Notion Tag Micro-Styles --- */
     .notion-card-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 6px;
       margin-top: auto;
     }
 
     .tag {
       font-size: 0.72rem;
-      padding: 2px 6px;
+      padding: 2px 8px;
       border-radius: 3px;
       font-weight: 500;
     }
 
-    .tag-blue   { background: #e3f2fd; color: #0d47a1; }
-    .tag-purple { background: #f3e5f5; color: #4a148c; }
-    .tag-orange { background: #fff3e0; color: #e65100; }
-    .tag-green  { background: #e8f5e9; color: #1b5e20; }
-    .tag-gray   { background: #f1f1ef; color: #37352f; }
+    .tag-blue   { background: var(--tag-blue-bg);   color: var(--tag-blue-txt); }
+    .tag-purple { background: var(--tag-purple-bg); color: var(--tag-purple-txt); }
+    .tag-orange { background: var(--tag-orange-bg); color: var(--tag-orange-txt); }
+    .tag-green  { background: var(--tag-green-bg);  color: var(--tag-green-txt); }
+    .tag-gray   { background: var(--tag-gray-bg);   color: var(--tag-gray-txt); }
+    .tag-red    { background: var(--tag-red-bg);    color: var(--tag-red-txt); }
 
-    /* --- Text Links List (Notion Text Reference) --- */
+    /* --- Interactive List Row References --- */
     .notion-links-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
+      margin-top: 1rem;
     }
 
     .notion-link-row {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 4px 8px;
+      gap: 10px;
+      padding: 6px 10px;
       border-radius: 4px;
       text-decoration: none;
       color: var(--text-main);
@@ -261,87 +365,126 @@
       border-bottom: 1px solid var(--border-color);
     }
 
-    /* --- Responsive Layout Breakers --- */
-    @media (max-width: 600px) {
-      .notion-page {
+    /* --- Responsive Viewport Adaptation --- */
+    @media (max-width: 640px) {
+      .notion-container {
         padding: 40px 20px;
       }
-      .notion-grid-3 {
+      h1.notion-title {
+        font-size: 2rem;
+      }
+      .competency-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+      }
+      .notion-gallery {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="notion-page">
+  <div class="notion-container">
     
-    <!-- Hero Header Section -->
     <header class="notion-header">
-      <div class="notion-page-icon">🧠</div>
+      <div class="notion-icon">🧠</div>
       <h1 class="notion-title">Tanooj Reddy Bogireddy</h1>
       <p class="notion-subtitle">AI Systems Engineer | Decision Intelligence</p>
+      
+      <div class="notion-meta-row">
+        <span class="status-badge"><span class="status-dot"></span>Open to Roles</span>
+        <span>•</span>
+        <span>San Francisco Bay Area</span>
+      </div>
     </header>
 
-    <!-- High-Signal Engineering Callout -->
     <div class="notion-callout">
       <div class="notion-callout-icon">⚡</div>
-      <div class="notion-callout-text">
-        Focusing on production-grade multi-agent systems, deterministic state machines, and LLM observability pipelines that bridge the gap between stochastic models and reliable enterprise applications.
+      <div class="notion-callout-content">
+        Engineering high-precision multi-agent graph topologies, programmatic LLMOps spend validation, and deterministic data integration pipelines that translate stochastic inference tasks into hardened business logic.
       </div>
     </div>
 
-    <!-- Core Engineering Competencies -->
-    <section class="notion-section">
-      <h2 class="notion-section-title">Core Competencies</h2>
-      <div class="notion-grid-3">
-        <div class="notion-col">
-          <div class="column-header">🤖 AI Orchestration</div>
+    <section class="db-wrapper">
+      <div class="db-header">
+        <span class="db-arrow">▼</span>
+        <div class="db-title">System Metrics Dashboard</div>
+      </div>
+      <div class="metrics-dashboard">
+        <div class="metric-block">
+          <div class="metric-value">65%</div>
+          <div class="metric-label">Ops Reductions</div>
+          <div class="metric-desc">Via custom agent routing</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-value">&lt;200ms</div>
+          <div class="metric-label">p95 Latency</div>
+          <div class="metric-desc">FastAPI data extraction</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-value">$0.00</div>
+          <div class="metric-label">Marketing Cost</div>
+          <div class="metric-desc">Organic acquisition pipeline</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="notion-divider">
+
+    <section class="db-wrapper">
+      <div class="db-header">
+        <span class="db-arrow">▼</span>
+        <div class="db-title">Core Engineering Capabilities</div>
+      </div>
+      
+      <div class="competency-grid">
+        <div class="competency-column">
+          <h3>🤖 AI Orchestration</h3>
           <ul>
-            <li>Multi-Agent State Machines</li>
-            <li>Deterministic Tool Routing</li>
-            <li>GraphRAG & Knowledge Graphs</li>
-            <li>Model Context Protocol (MCP)</li>
+            <li>Multi-Agent Architecture</li>
+            <li>Deterministic Graph Logic</li>
+            <li>GraphRAG Pipelines</li>
+            <li>Model Context Protocol</li>
           </ul>
         </div>
-        <div class="notion-col">
-          <div class="column-header">🛠️ Engineering & Infra</div>
+        <div class="competency-column">
+          <h3>🛠️ Infrastructure & Data</h3>
           <ul>
             <li>LangGraph & PydanticAI</li>
-            <li>Python & FastAPI</li>
-            <li>TypeScript & Node.js</li>
-            <li>Vector DBs & Redis Caching</li>
+            <li>Python & FastAPI Core</li>
+            <li>TypeScript / Node.js</li>
+            <li>Redis & Vector Backends</li>
           </ul>
         </div>
-        <div class="notion-col">
-          <div class="column-header">📈 Analytics & Growth</div>
+        <div class="competency-column">
+          <h3>📈 Growth & Analytics</h3>
           <ul>
             <li>LLM Spend Observability</li>
-            <li>Latency & Cost Tracking</li>
-            <li>Google Analytics 4 / APIs</li>
-            <li>Search AI Optimization (SAIO)</li>
+            <li>Itemized Token Monitoring</li>
+            <li>Google Analytics 4 Engine</li>
+            <li>AEO / SAIO Architecture</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Master Repositories Database (Notion Gallery View) -->
-    <section class="notion-section">
-      <div class="database-header">
-        <span class="database-arrow">▼</span>
-        <h2 class="notion-section-title inline-db">Repositories & Production Utilities</h2>
-        <span class="database-view-tag">Gallery View</span>
+    <hr class="notion-divider">
+
+    <section class="db-wrapper">
+      <div class="db-header">
+        <span class="db-arrow">▼</span>
+        <div class="db-title">Repositories & System Infrastructure</div>
+        <span class="db-view-badge">Gallery View</span>
       </div>
       
       <div class="notion-gallery">
         
-        <!-- Project 1: AI Agent Cost Analyzer -->
         <a href="https://github.com/tanoojbogireddy/AI-Agent-Cost-Analyzer" target="_blank" class="notion-card">
           <div class="notion-card-cover">📊</div>
           <div class="notion-card-content">
             <div class="notion-card-title">AI-Agent-Cost-Analyzer</div>
-            <p class="notion-card-desc">An open-source LLMOps utility built to track multi-agent token utilization, execution latency, and itemized execution costs across agentic graphs.</p>
+            <p class="notion-card-desc">Granular LLMOps metrics tool engineering real-time graph step-cost isolation, transactional token auditing, and edge execution latency diagnostics.</p>
             <div class="notion-card-tags">
               <span class="tag tag-blue">TypeScript</span>
               <span class="tag tag-purple">LLMOps</span>
@@ -350,58 +493,59 @@
           </div>
         </a>
 
-        <!-- Project 2: Review Intelligence System -->
         <a href="https://github.com/tanoojbogireddy/Review-Intelligence-System" target="_blank" class="notion-card">
           <div class="notion-card-cover">🤖</div>
           <div class="notion-card-content">
             <div class="notion-card-title">Review-Intelligence-System</div>
-            <p class="notion-card-desc">An end-to-end NLP framework executing multi-dimensional aspect extraction, sentiment categorization, and semantic intent mapping over unstructured textual data.</p>
+            <p class="notion-card-desc">End-to-end unstructured content ingestion engine running aspect-based sentiment routing, custom category mappings, and semantic data serialization via FastAPI.</p>
             <div class="notion-card-tags">
               <span class="tag tag-orange">Python</span>
               <span class="tag tag-green">FastAPI</span>
-              <span class="tag tag-blue">NLP</span>
+              <span class="tag tag-blue">NLP Framework</span>
             </div>
           </div>
         </a>
 
-        <!-- Project 3: Loop Lock Retention Engine -->
-        <div class="notion-card static-card">
+        <a href="https://github.com/tanoojbogireddy" target="_blank" class="notion-card">
           <div class="notion-card-cover">🔒</div>
           <div class="notion-card-content">
             <div class="notion-card-title">Loop Lock Engine</div>
-            <p class="notion-card-desc">A creator-economy micro-SaaS asset automating video retention drop-off analytics via programmatic hook injections and GA4 algorithmic data loops.</p>
+            <p class="notion-card-desc">Programmatic analytics micro-SaaS framework intercepting viewer drop-off behavior utilizing automated cohort mapping and GA4 telemetry evaluation loops.</p>
             <div class="notion-card-tags">
               <span class="tag tag-green">Micro-SaaS</span>
               <span class="tag tag-purple">Marketing Eng</span>
-              <span class="tag tag-orange">Python</span>
+              <span class="tag tag-orange">Data Loops</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Project 4: Bound Focus Extension -->
-        <div class="notion-card static-card">
+        <a href="https://github.com/tanoojbogireddy" target="_blank" class="notion-card">
           <div class="notion-card-cover">⏳</div>
           <div class="notion-card-content">
             <div class="notion-card-title">Bound Focus</div>
-            <p class="notion-card-desc">A minimalist productivity browser architecture engineering behavior-modification interventions for high-focus creator cycles.</p>
+            <p class="notion-card-desc">Minimal browser automation client engineered to isolate distraction factors and map behavioral state-triggers over active execution window loops.</p>
             <div class="notion-card-tags">
               <span class="tag tag-blue">JavaScript</span>
-              <span class="tag tag-gray">Productivity</span>
+              <span class="tag tag-red">Behavioral ML</span>
             </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </section>
 
-    <!-- Connect / Contact Infrastructure -->
-    <section class="notion-section">
-      <h2 class="notion-section-title">Connect</h2>
+    <hr class="notion-divider">
+
+    <section class="db-wrapper">
+      <div class="db-header">
+        <span class="db-arrow">▼</span>
+        <div class="db-title">Verification Directory</div>
+      </div>
       <div class="notion-links-list">
         <a href="https://github.com/tanoojbogireddy" target="_blank" class="notion-link-row">
-          <span class="link-icon">📁</span> <span class="link-text">GitHub Profile</span>
+          <span class="link-icon">📁</span> <span class="link-text">GitHub Repositories</span>
         </a>
-        <a href="https://www.linkedin.com/in/tanooj-reddy" target="_blank" class="notion-link-row">
+        <a href="https://www.linkedin.com/in/tanooj-bogireddy/" target="_blank" class="notion-link-row">
           <span class="link-icon">👔</span> <span class="link-text">LinkedIn Profile</span>
         </a>
       </div>
