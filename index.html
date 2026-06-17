@@ -3,822 +3,411 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanooj Reddy Bogireddy — AI Systems Engineer</title>
-  <meta name="description" content="AI Systems Engineer specializing in GTM Intelligence, AEO/SAIO, Growth Analytics Engineering, and autonomous LLM pipelines.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Tanooj Bogireddy -AI Systems Engineer</title>
+  <meta name="description" content="AI Systems Engineer specializing in multi-agent orchestration, LLMOps cost observability, and production NLP frameworks.">
+  
   <style>
+    /* --- Notion UI Design System Tokens --- */
+    :root {
+      --bg-color: #ffffff;
+      --text-main: #37352f;
+      --text-gray: #787774;
+      --border-color: #e9e9e8;
+      --bg-callout: #f1f1ef;
+      --bg-hover: #f7f7f5;
+      
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    /* --- Global Configurations --- */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    :root {
-      --bg-primary: #fafafa;
-      --bg-secondary: #ffffff;
-      --bg-tertiary: #f5f5f5;
-      --text-primary: #1a1a1a;
-      --text-secondary: #666666;
-      --text-tertiary: #999999;
-      --accent: #0066cc;
-      --accent-light: #e6f0ff;
-      --accent-hover: #0052a3;
-      --border: #e8e8e8;
-      --border-subtle: #f0f0f0;
-      --success: #17a61f;
-      --warning: #ff9800;
-      --error: #d32f2f;
-      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-mono: 'IBM Plex Mono', monospace;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-      --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.15);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-      color: var(--text-primary);
-      font-family: var(--font-primary);
-      line-height: 1.6;
-      font-size: 15px;
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
     }
 
-    /* HEADER / NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(250, 250, 250, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 16px 48px;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: var(--shadow-sm);
+    .notion-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 40px 100px 40px;
     }
 
-    .nav-logo {
-      font-size: 18px;
+    /* --- Typography Structure --- */
+    .notion-header {
+      margin-bottom: 2rem;
+    }
+
+    .notion-page-icon {
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    h1.notion-title {
+      font-size: 2.5rem;
       font-weight: 700;
-      color: var(--text-primary);
-      text-decoration: none;
-      letter-spacing: -0.3px;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.015em;
     }
 
-    .nav-links {
+    .notion-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      margin: 0;
+    }
+
+    h2.notion-section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 12px;
+      padding-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    /* --- Notion Callout Block --- */
+    .notion-callout {
       display: flex;
-      gap: 32px;
-      list-style: none;
+      padding: 16px;
+      background-color: var(--bg-callout);
+      border-radius: 4px;
+      margin: 24px 0;
+      gap: 14px;
+      align-items: flex-start;
     }
 
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      background: var(--accent);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-cta:hover {
-      background: var(--accent-hover);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    /* MAIN CONTENT */
-    main {
-      margin-top: 80px;
-      padding: 0 48px;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 20px;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      animation: fadeInDown 0.6s ease-out;
-    }
-
-    .hero-badge::before {
-      content: '●';
-      color: var(--success);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    .hero-title {
-      font-size: 56px;
-      font-weight: 800;
+    .notion-callout-icon {
+      font-size: 1.25rem;
       line-height: 1.2;
-      margin-bottom: 24px;
-      letter-spacing: -0.8px;
-      animation: fadeInDown 0.8s ease-out 0.1s both;
     }
 
-    .hero-title span {
-      background: linear-gradient(135deg, var(--accent) 0%, #0052a3 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .notion-callout-text {
+      font-size: 0.95rem;
     }
 
-    .hero-subtitle {
-      font-size: 20px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeInUp 0.8s ease-out 0.3s both;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: var(--bg-secondary);
-      color: var(--text-primary);
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary:hover {
-      background: var(--bg-tertiary);
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* FLOATING CARDS CONTAINER */
-    .floating-cards-container {
-      margin-bottom: 80px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-tertiary);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      font-family: var(--font-mono);
-    }
-
-    .section-title {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.5px;
-      margin-bottom: 48px;
-    }
-
-    /* STATS CARDS - FLOATING */
-    .stats-grid {
+    /* --- Multi-Column Layout Grid --- */
+    .notion-grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 80px;
+      gap: 24px;
+      margin: 20px 0;
     }
 
-    .stat-card {
-      background: var(--bg-secondary);
-      border-radius: 16px;
-      padding: 32px;
-      border: 1px solid var(--border);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 102, 204, 0) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .stat-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-8px);
-    }
-
-    .stat-card:hover::before {
-      opacity: 1;
-    }
-
-    .stat-num {
-      font-size: 40px;
-      font-weight: 800;
-      color: var(--accent);
-      font-family: var(--font-mono);
+    .column-header {
+      font-weight: 600;
+      font-size: 0.95rem;
       margin-bottom: 8px;
-      line-height: 1;
     }
 
-    .stat-label {
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+    .notion-col ul {
+      padding-left: 16px;
+      margin: 0;
+    }
+
+    .notion-col li {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    /* --- Database Structural Header --- */
+    .database-header {
+      display: flex;
+      align-items: center;
+      margin-top: 3.5rem;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+    }
+
+    .database-arrow {
+      color: var(--text-gray);
+      font-size: 0.65rem;
+      margin-right: 8px;
+      user-select: none;
+    }
+
+    h2.notion-section-title.inline-db {
+      margin: 0;
+      font-size: 1.15rem;
       font-weight: 600;
     }
 
-    /* PROJECT CARDS - FLOATING */
-    .projects-grid {
+    .database-view-tag {
+      margin-left: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-main);
+      padding: 2px 6px;
+      background: var(--bg-callout);
+      border-radius: 3px;
+    }
+
+    /* --- Inline Database Gallery System --- */
+    .notion-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 80px;
+      gap: 16px;
     }
 
-    .project-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
+    .notion-card {
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      background: var(--bg-color);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      overflow: hidden;
-      height: 100%;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .project-card::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 102, 204, 0.1) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
+    .notion-card:hover {
+      background-color: #fafafa;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
-    .project-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-12px);
+    .notion-card.static-card:hover {
+      cursor: default;
+      box-shadow: none;
+      background: var(--bg-color);
     }
 
-    .project-card:hover::after {
-      opacity: 1;
+    .notion-card-cover {
+      height: 95px;
+      background: #f7f7f5;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
     }
 
-    .project-card.featured {
-      border: 2px solid var(--accent);
-      background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg-secondary) 100%);
+    .notion-card-content {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
-    .project-tag {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-family: var(--font-mono);
+    .notion-card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
     }
 
-    .project-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.3;
+    .notion-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      margin: 0 0 14px 0;
+      line-height: 1.45;
+      flex-grow: 1;
     }
 
-    .project-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      flex: 1;
-    }
-
-    .project-tags {
+    /* --- Notion Multiselect Property Tag Styling --- */
+    .notion-card-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 4px;
       margin-top: auto;
     }
 
-    .project-tag-item {
-      font-size: 11px;
+    .tag {
+      font-size: 0.72rem;
+      padding: 2px 6px;
+      border-radius: 3px;
       font-weight: 500;
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      padding: 5px 10px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
     }
 
-    .project-links {
-      display: flex;
-      gap: 16px;
-      margin-top: 12px;
-    }
+    .tag-blue   { background: #e3f2fd; color: #0d47a1; }
+    .tag-purple { background: #f3e5f5; color: #4a148c; }
+    .tag-orange { background: #fff3e0; color: #e65100; }
+    .tag-green  { background: #e8f5e9; color: #1b5e20; }
+    .tag-gray   { background: #f1f1ef; color: #37352f; }
 
-    .project-link {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .project-link:hover {
-      color: var(--accent-hover);
-      transform: translateX(4px);
-    }
-
-    /* EXPERIENCE CARDS - FLOATING */
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 80px;
-    }
-
-    .exp-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-sm);
+    /* --- Text Links List (Notion Text Reference) --- */
+    .notion-links-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      position: relative;
-      overflow: hidden;
+      gap: 6px;
     }
 
-    .exp-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .exp-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-8px);
-    }
-
-    .exp-card:hover::before {
-      opacity: 1;
-    }
-
-    .exp-header {
+    .notion-link-row {
       display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 12px;
-    }
-
-    .exp-company {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      letter-spacing: -0.2px;
-      font-family: var(--font-mono);
-    }
-
-    .exp-date {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-tertiary);
-      font-family: var(--font-mono);
-      white-space: nowrap;
-    }
-
-    .exp-role {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 4px 0;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 8px;
-    }
-
-    .exp-bullets li {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .exp-bullets li::before {
-      content: '◆';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 6px;
-    }
-
-    /* SKILLS CARDS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-bottom: 80px;
-    }
-
-    .skill-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .skill-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-6px);
-    }
-
-    .skill-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-tertiary);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      font-family: var(--font-mono);
-    }
-
-    .skill-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-item {
-      font-size: 12px;
-      font-weight: 500;
-      background: var(--bg-tertiary);
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-    }
-
-    .skill-item:hover {
-      border-color: var(--accent);
-      background: var(--accent-light);
-      color: var(--accent);
-    }
-
-    /* ABOUT SECTION */
-    .about-section {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px;
-      margin-bottom: 80px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-    }
-
-    .about-section:hover {
-      box-shadow: var(--shadow-lg);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .about-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .about-text strong {
-      color: var(--text-primary);
-      font-weight: 700;
-    }
-
-    .quote {
-      background: var(--accent-light);
-      border-left: 3px solid var(--accent);
-      padding: 16px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-style: italic;
-      color: var(--text-primary);
-      margin-top: 24px;
-      font-weight: 500;
-    }
-
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .edu-item {
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      transition: all 0.3s ease;
-    }
-
-    .edu-item:hover {
-      border-color: var(--accent);
-      background: var(--accent-light);
-    }
-
-    .edu-item h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 4px;
-    }
-
-    .edu-item p {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 2px;
-    }
-
-    .edu-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      background: var(--accent);
-      color: white;
       padding: 4px 8px;
       border-radius: 4px;
-      margin-top: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-subtle);
-      padding: 48px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: var(--text-secondary);
       text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight: 500;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      width: fit-content;
+      transition: background 0.1s ease;
     }
 
-    .footer-links a:hover {
-      color: var(--accent);
+    .notion-link-row:hover {
+      background-color: var(--bg-hover);
     }
 
-    .footer-text {
-      font-size: 12px;
-      color: var(--text-tertiary);
+    .link-text {
+      border-bottom: 1px solid var(--border-color);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav {
-        padding: 12px 24px;
+    /* --- Responsive Layout Breakers --- */
+    @media (max-width: 600px) {
+      .notion-page {
+        padding: 40px 20px;
       }
-
-      .nav-links {
-        gap: 16px;
-        display: none;
-      }
-
-      main {
-        padding: 0 24px;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero-title {
-        font-size: 36px;
-      }
-
-      .hero-subtitle {
-        font-size: 16px;
-      }
-
-      .section-title {
-        font-size: 28px;
-        margin-bottom: 32px;
-      }
-
-      .stats-grid,
-      .projects-grid,
-      .experience-grid,
-      .skills-grid {
+      .notion-grid-3 {
         grid-template-columns: 1fr;
         gap: 16px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .about-section {
-        padding: 32px 24px;
-      }
-
-      .project-card,
-      .stat-card,
-      .skill-card,
-      .exp-card {
-        padding: 24px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#home" class="nav-logo">Tanooj Bogireddy</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <h1 class="hero-title">Building <span>autonomous multi-agent systems</span> that drive impact</h1>
-      <p class="hero-subtitle">I am an AI Systems Engineer specializing in custom agent orchestration, GTM intelligence, and growth analytics. I design and scale production-grade, autonomous mult
+  <div class="notion-page">
+    
+    <!-- Hero Header Section -->
+    <header class="notion-header">
+      <div class="notion-page-icon">🧠</div>
+      <h1 class="notion-title">Tanooj Reddy Bogireddy</h1>
+      <p class="notion-subtitle">AI Systems Engineer | Decision Intelligence</p>
+    </header>
+
+    <!-- High-Signal Engineering Callout -->
+    <div class="notion-callout">
+      <div class="notion-callout-icon">⚡</div>
+      <div class="notion-callout-text">
+        Focusing on production-grade multi-agent systems, deterministic state machines, and LLM observability pipelines that bridge the gap between stochastic models and reliable enterprise applications.
+      </div>
+    </div>
+
+    <!-- Core Engineering Competencies -->
+    <section class="notion-section">
+      <h2 class="notion-section-title">Core Competencies</h2>
+      <div class="notion-grid-3">
+        <div class="notion-col">
+          <div class="column-header">🤖 AI Orchestration</div>
+          <ul>
+            <li>Multi-Agent State Machines</li>
+            <li>Deterministic Tool Routing</li>
+            <li>GraphRAG & Knowledge Graphs</li>
+            <li>Model Context Protocol (MCP)</li>
+          </ul>
+        </div>
+        <div class="notion-col">
+          <div class="column-header">🛠️ Engineering & Infra</div>
+          <ul>
+            <li>LangGraph & PydanticAI</li>
+            <li>Python & FastAPI</li>
+            <li>TypeScript & Node.js</li>
+            <li>Vector DBs & Redis Caching</li>
+          </ul>
+        </div>
+        <div class="notion-col">
+          <div class="column-header">📈 Analytics & Growth</div>
+          <ul>
+            <li>LLM Spend Observability</li>
+            <li>Latency & Cost Tracking</li>
+            <li>Google Analytics 4 / APIs</li>
+            <li>Search AI Optimization (SAIO)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Repositories Database (Notion Gallery View) -->
+    <section class="notion-section">
+      <div class="database-header">
+        <span class="database-arrow">▼</span>
+        <h2 class="notion-section-title inline-db">Repositories & Production Utilities</h2>
+        <span class="database-view-tag">Gallery View</span>
+      </div>
+      
+      <div class="notion-gallery">
+        
+        <!-- Project 1: AI Agent Cost Analyzer -->
+        <a href="https://github.com/tanoojbogireddy/AI-Agent-Cost-Analyzer" target="_blank" class="notion-card">
+          <div class="notion-card-cover">📊</div>
+          <div class="notion-card-content">
+            <div class="notion-card-title">AI-Agent-Cost-Analyzer</div>
+            <p class="notion-card-desc">An open-source LLMOps utility built to track multi-agent token utilization, execution latency, and itemized execution costs across agentic graphs.</p>
+            <div class="notion-card-tags">
+              <span class="tag tag-blue">TypeScript</span>
+              <span class="tag tag-purple">LLMOps</span>
+              <span class="tag tag-gray">Observability</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2: Review Intelligence System -->
+        <a href="https://github.com/tanoojbogireddy/Review-Intelligence-System" target="_blank" class="notion-card">
+          <div class="notion-card-cover">🤖</div>
+          <div class="notion-card-content">
+            <div class="notion-card-title">Review-Intelligence-System</div>
+            <p class="notion-card-desc">An end-to-end NLP framework executing multi-dimensional aspect extraction, sentiment categorization, and semantic intent mapping over unstructured textual data.</p>
+            <div class="notion-card-tags">
+              <span class="tag tag-orange">Python</span>
+              <span class="tag tag-green">FastAPI</span>
+              <span class="tag tag-blue">NLP</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3: Loop Lock Retention Engine -->
+        <div class="notion-card static-card">
+          <div class="notion-card-cover">🔒</div>
+          <div class="notion-card-content">
+            <div class="notion-card-title">Loop Lock Engine</div>
+            <p class="notion-card-desc">A creator-economy micro-SaaS asset automating video retention drop-off analytics via programmatic hook injections and GA4 algorithmic data loops.</p>
+            <div class="notion-card-tags">
+              <span class="tag tag-green">Micro-SaaS</span>
+              <span class="tag tag-purple">Marketing Eng</span>
+              <span class="tag tag-orange">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Bound Focus Extension -->
+        <div class="notion-card static-card">
+          <div class="notion-card-cover">⏳</div>
+          <div class="notion-card-content">
+            <div class="notion-card-title">Bound Focus</div>
+            <p class="notion-card-desc">A minimalist productivity browser architecture engineering behavior-modification interventions for high-focus creator cycles.</p>
+            <div class="notion-card-tags">
+              <span class="tag tag-blue">JavaScript</span>
+              <span class="tag tag-gray">Productivity</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Connect / Contact Infrastructure -->
+    <section class="notion-section">
+      <h2 class="notion-section-title">Connect</h2>
+      <div class="notion-links-list">
+        <a href="https://github.com/tanoojbogireddy" target="_blank" class="notion-link-row">
+          <span class="link-icon">📁</span> <span class="link-text">GitHub Profile</span>
+        </a>
+        <a href="https://www.linkedin.com/in/tanooj-reddy" target="_blank" class="notion-link-row">
+          <span class="link-icon">👔</span> <span class="link-text">LinkedIn Profile</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
